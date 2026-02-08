@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   DESIGN TOKENS (Tailwind v3 Compatible)
+   ============================================ */
+
+:root {
+  /* Core Colors */
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+
+  /* Font Families */
+  --font-russo: 'Russo One', sans-serif;
+  --font-lexend: 'Lexend Exa', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  /* Shadow & Glow Tokens */
+  --shadow-glow-sm: 0 0 10px rgba(255, 255, 255, 0.3);
+  --shadow-glow-md: 0 0 20px rgba(255, 255, 255, 0.4);
+  --shadow-glow-lg: 0 0 30px rgba(255, 255, 255, 0.5);
+  
+  /* Overlay */
+  --overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================
+   BASE LAYER
+   ============================================ */
+@layer base {
+  html {
+    /* scroll-behavior handled by Lenis — do not set here */
+  }
+  
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: black;
+    font-family: var(--font-lexend);
+    overflow-x: hidden; /* Critical for animations */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-russo);
+  }
+
+  ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+}
+
+/* ============================================
+   LENIS SCROLL (Required for Smooth Scroll)
+   ============================================ */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Variable Proximity Font */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&family=Russo+One&display=swap');
+
+.variable-proximity {
+  font-family: 'Roboto Flex', sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fx-background {
+  background-color: #111111;
+}
+
