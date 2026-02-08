@@ -128,7 +128,7 @@ export default function Home() {
         <Navigation visible={true} />
 
         <div id="about">
-          <ScrollExpandMedia mediaSrc="/images/me.jpeg">
+          <ScrollExpandMedia mediaSrc="/images/me.JPEG">
             <HeroSection />
           </ScrollExpandMedia>
         </div>

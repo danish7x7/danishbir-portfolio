@@ -23,7 +23,7 @@ export default function ContactSection({ links }: ContactSectionProps) {
         <div className="w-full lg:w-[35%] flex items-center justify-center p-4 lg:p-0">
           <div className="relative w-full h-[60vh] lg:h-screen">
             <img
-              src="/images/me.jpeg"
+              src="/images/me.JPEG"
               alt="Danishbir Singh"
               className="w-full h-full object-cover"
             />
