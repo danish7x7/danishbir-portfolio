@@ -8,7 +8,7 @@ Personal portfolio website showcasing AI/ML and software engineering projects.
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
 - **Animations:** GSAP, Framer Motion
-- **Deployment:** Vercel
+- **Deployment:** Vercel, Supabase
 
 ## Features
 
