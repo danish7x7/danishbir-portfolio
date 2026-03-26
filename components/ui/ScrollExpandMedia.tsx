@@ -48,33 +48,12 @@ const ScrollExpandMedia = ({
   const textWidthAnim = useTransform(scrollYProgress, [0, 0.6], ["90%", "65%"]);
 
   return (
-    <div ref={containerRef} className="relative h-[350vh]">
+    <div ref={containerRef} className="relative h-[220vh]">
       
       {/* STICKY VIEWPORT */}
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-black flex items-center">
-        
-        {/* --- BACKGROUND PARTICLES (Always visible behind everything) --- */}
-        <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-           {[...Array(40)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white blur-[1px]"
-              style={{
-                width: Math.random() * 3 + 1 + 'px',
-                height: Math.random() * 3 + 1 + 'px',
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.5 + 0.2,
-                animation: `float ${Math.random() * 10 + 20}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 5}s`,
-              }}
-            />
-          ))}
-        </div>
-
         {/* --- CONTENT CONTAINER --- */}
-        <div className="relative w-full h-full max-w-[1920px] mx-auto">
-          
+        <div className="relative w-full h-full max-w-[1920px] mx-auto">         
           {/* 1. IMAGE SECTION (Background Layer that moves) */}
           <motion.div
             className="absolute top-1/2 -translate-y-1/2 z-10 overflow-hidden border-white/10"
@@ -117,13 +96,6 @@ const ScrollExpandMedia = ({
 
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translate(0, 0); }
-          50% { transform: translate(-15px, -25px); }
-        }
-      `}</style>
     </div>
   );
 };

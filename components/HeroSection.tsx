@@ -1,56 +1,39 @@
 'use client'
 
-import { useRef } from 'react'
-import VariableProximity from '@/components/ui/VariableProximity'
-import RotatingText from '@/components/ui/RotatingText'
-
-
 export default function HeroSection() {
-  const bioContainerRef = useRef<HTMLDivElement>(null)
-
   return (
     <div className="flex flex-col justify-center w-full">
-      
+
       {/* Name */}
-      <h1 
-        className="text-6xl md:text-8xl lg:text-9xl text-white mb-6 tracking-tight drop-shadow-2xl"
-        style={{ 
+      <h1
+        className="text-6xl md:text-8xl lg:text-9xl text-white mb-8 tracking-tight"
+        style={{
           fontFamily: 'var(--font-russo), sans-serif',
           lineHeight: 0.95,
-          textShadow: '0 4px 30px rgba(0,0,0,0.5)' // Extra shadow for readability over image
+          textShadow: '0 4px 30px rgba(0,0,0,0.5)',
         }}
       >
-        Danishbir <br/> Singh
+        Danishbir <br /> Singh
       </h1>
-      
-      {/* Rotating Subheading */}
-      <div 
-        className="text-2xl md:text-3xl text-gray-200 mb-10 flex items-center gap-3 font-medium drop-shadow-lg"
+
+      {/* Statement — write this in your own voice */}
+      <p
+        className="text-xl md:text-2xl text-white/75 leading-relaxed max-w-xl mb-6"
         style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
       >
-        <span className="text-white opacity-90">I am a</span>
-        
-        <RotatingText 
-          texts={['Software', 'AI/ML', 'Creative', 'Full Stack']} 
-          interval={2000} 
-          className="text-blue-400 font-bold" 
-        />
-        
-        <span className="text-white opacity-90">Engineer</span>
-      </div>
+        I build AI systems that work beyond the benchmark —
+        production-grade, low-latency, and actually deployed.
+        SJSU CS grad obsessed with the gap between research and reality.
+      </p>
 
-      {/* Bio with Variable Proximity Effect */}
-      <div ref={bioContainerRef} className="max-w-3xl cursor-default drop-shadow-md">
-        <VariableProximity
-          label="Building intelligent systems that bridge the gap between complex data and human experience."
-          className="text-xl md:text-2xl text-gray-200 leading-relaxed tracking-wide"
-          fromFontVariationSettings="'wght' 300, 'opsz' 9"
-          toFontVariationSettings="'wght' 700, 'opsz' 40"
-          containerRef={bioContainerRef}
-          radius={120}
-          falloff="linear"
-        />
-      </div>
+      {/* Status line */}
+      <p
+        className="text-sm uppercase tracking-widest text-white/35"
+        style={{ fontFamily: 'var(--font-lexend), sans-serif' }}
+      >
+        Open to full-time roles · San Jose, CA
+      </p>
+
     </div>
   )
 }

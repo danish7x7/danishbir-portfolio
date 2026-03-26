@@ -70,11 +70,8 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Variable Proximity Font */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&family=Russo+One&display=swap');
-
 .variable-proximity {
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: var(--font-lexend), sans-serif;
 }
 
 .sr-only {

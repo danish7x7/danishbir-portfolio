@@ -34,7 +34,7 @@ export default function SkillsSection({ categories }: SkillsSectionProps) {
             fontFamily: 'var(--font-russo), sans-serif',
             fontSize: 'clamp(6rem, 25vw, 18rem)',
             fontWeight: 'bold',
-            opacity: 0.2,
+            opacity: 0.07,
           }}
         />
       </div>

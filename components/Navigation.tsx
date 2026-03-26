@@ -5,12 +5,11 @@ import GooeyNav from './ui/GooeyNav';
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
 
-const SECTION_IDS = ['about', 'skills', 'projects', 'contact'];
+const SECTION_IDS = ['about', 'projects', 'contact'];
 
 interface NavigationProps {
   visible?: boolean;

@@ -38,7 +38,7 @@ export default function ContactSection({ links }: ContactSectionProps) {
         <div className="w-full lg:w-[65%] flex flex-col justify-center px-8 lg:px-24 py-16">
           <div className="mb-16">
             <h2
-              className="text-5xl md:text-7xl text-gray-600 uppercase tracking-tighter"
+              className="text-5xl md:text-7xl text-white/30 uppercase tracking-tighter"
               style={{ fontFamily: 'var(--font-russo), sans-serif' }}
             >
               Get in touch
