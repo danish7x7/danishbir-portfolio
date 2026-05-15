@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, JetBrains_Mono, IBM_Plex_Serif, Caveat, Bebas_
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -71,6 +72,7 @@ export default function RootLayout({
             {children}
           </div>
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
