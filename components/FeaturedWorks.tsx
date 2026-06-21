@@ -4,6 +4,24 @@ import Image from "next/image";
 const projects = [
   {
     id: "01",
+    title: "Injection-Aware Freight Pipeline",
+    tag: "LLM Safety",
+    github: "https://github.com/danish7x7/freight-pipeline",
+    image: "/projects/06.jpg",
+    placement: "left",
+    size: "lg",
+  },
+  {
+    id: "02",
+    title: "Geospatial Inequality Dashboard",
+    tag: "Full-Stack Geospatial",
+    github: "https://github.com/danish7x7/geospatial-dashboard",
+    image: "/projects/05.png",
+    placement: "right",
+    size: "md",
+  },
+  {
+    id: "03",
     title: "LLM Inference Benchmarking Suite",
     tag: "Performance Engineering",
     github: "https://github.com/danish7x7/llm-inference-bench", // TODO: replace with real repo URL
@@ -12,7 +30,7 @@ const projects = [
     size: "lg",
   },
   {
-    id: "02",
+    id: "04",
     title: "Cloud Infrastructure Automation",
     tag: "Infrastructure as Code",
     github: "https://github.com/danish7x7/devops-nginx-project", // TODO: replace with real repo URL
@@ -21,7 +39,7 @@ const projects = [
     size: "md",
   },
   {
-    id: "03",
+    id: "05",
     title: "Agentic RAG System",
     tag: "Applied ML",
     github: "https://github.com/danish7x7/LegalLLM", // TODO: replace with real repo URL
@@ -30,7 +48,7 @@ const projects = [
     size: "lg",
   },
   {
-    id: "04",
+    id: "06",
     title: "Travel Companion — Multimodal AI",
     tag: "Applied ML",
     github: "https://github.com/danish7x7/Multi-Modal-AI-Travel-Companion",
