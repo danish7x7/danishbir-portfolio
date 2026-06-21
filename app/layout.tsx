@@ -8,7 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const playfair = Playfair_Display({
@@ -64,7 +64,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} ${ibmPlexSerif.variable} ${caveat.variable} ${bebas.variable} dark`}>
-      <body className="bg-black text-white font-sans antialiased">
+      <body className="bg-black text-white font-sans antialiased overflow-x-clip">
         <SmoothScroll>
           <CustomCursor />
           <div className="mx-auto max-w-[2000px] px-[3%] md:px-4 lg:px-9 pt-24">

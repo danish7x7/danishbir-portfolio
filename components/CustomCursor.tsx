@@ -1,7 +1,19 @@
 // components/CustomCursor.tsx
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+
+function useMediaQuery(query: string): boolean {
+  return useSyncExternalStore(
+    (onChange) => {
+      const mql = window.matchMedia(query);
+      mql.addEventListener("change", onChange);
+      return () => mql.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia(query).matches,
+    () => false,
+  );
+}
 
 export default function CustomCursor() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -9,12 +21,10 @@ export default function CustomCursor() {
   const position = useRef({ x: 0, y: 0 });
   const target = useRef({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
-  const [enabled, setEnabled] = useState(false);
+  const enabled = useMediaQuery("(pointer: fine)");
 
   useEffect(() => {
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    if (!finePointer) return;
-    setEnabled(true);
+    if (!enabled) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -58,7 +68,7 @@ export default function CustomCursor() {
       window.removeEventListener("mouseover", handleOver);
       window.removeEventListener("mousedown", handleDown);
     };
-  }, []);
+  }, [enabled]);
 
   if (!enabled) return null;
 

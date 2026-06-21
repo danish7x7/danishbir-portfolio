@@ -26,15 +26,19 @@ const Experience: React.FC = () => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReduced) return;
 
+    let swapTimeout: ReturnType<typeof setTimeout>;
     const interval = setInterval(() => {
       setVisible(false);
-      setTimeout(() => {
+      swapTimeout = setTimeout(() => {
         setWordIndex((i) => (i + 1) % ROTATING_WORDS.length);
         setVisible(true);
       }, 250);
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearTimeout(swapTimeout);
+    };
   }, []);
 
   return (

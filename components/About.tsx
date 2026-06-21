@@ -29,7 +29,7 @@ const About: React.FC = () => {
         {/* Left: 3-col × 8-row tall portrait (aspect 3:8) */}
         <div className="md:col-span-4">
           <div className="relative w-full h-full min-h-[600px] bg-zinc-800 rounded-2xl overflow-hidden">
-            <Image src="/about-portrait.JPEG" alt="Portrait of Danishbir Singh Bhatti" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" priority />
+            <Image src="/about-portrait.JPEG" alt="Portrait of Danishbir Singh Bhatti" fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
           </div>
         </div>
 

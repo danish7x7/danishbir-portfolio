@@ -60,7 +60,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* Cards layer — flows over the pinned marquee */}
-        <div className="relative -mt-screen z-10 pt-[40vh] pb-[40vh] flex flex-col gap-[30vh]">
+        <div className="relative -mt-[100vh] z-10 pt-[40vh] pb-[40vh] flex flex-col gap-[30vh]">
           {TESTIMONIALS.map((t, i) => (
             <a key={i} href={t.linkedin} target="_blank" rel="noopener noreferrer" data-cursor="view" className={`block w-full md:w-[32%] bg-black border border-white/20 hover:border-white/40 transition-colors duration-200 rounded-2xl p-6 ${ALIGNMENTS[i]}`}>
               <div>

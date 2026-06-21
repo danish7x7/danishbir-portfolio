@@ -1,22 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #000000;
-  --color-foreground: #f3f4f6;
-  --color-accent: #ffffff;
-  --color-accent-muted: #a1a1aa;
-  --color-accent-subtle: #27272a;
-
   --font-sans: var(--font-inter), Inter, "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-playfair: var(--font-playfair), Georgia, serif;
   --font-jetbrains: var(--font-jetbrains), ui-monospace, Menlo, monospace;
   --font-plex-serif: var(--font-plex-serif), Georgia, serif;
   --font-caveat: var(--font-caveat), cursive;
   --font-bebas: var(--font-bebas), Impact, sans-serif;
-
-  --tracking-tightest: -0.05em;
-  --tracking-brutal: -0.04em;
 }
 
 @layer base {

@@ -53,10 +53,21 @@ const Closing: React.FC = () => {
 
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    navigator.clipboard.writeText(EMAIL).then(() => {
-      setToastVisible(true);
-      setTimeout(() => setToastVisible(false), 2000);
-    });
+    const fallback = () => {
+      // Clipboard unavailable (insecure context / older browser) — open mail client instead
+      window.location.href = `mailto:${EMAIL}`;
+    };
+    if (!navigator.clipboard) {
+      fallback();
+      return;
+    }
+    navigator.clipboard
+      .writeText(EMAIL)
+      .then(() => {
+        setToastVisible(true);
+        setTimeout(() => setToastVisible(false), 2000);
+      })
+      .catch(fallback);
   };
 
   return (
