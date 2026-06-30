@@ -3,6 +3,8 @@ import { Inter, Playfair_Display, JetBrains_Mono, IBM_Plex_Serif, Caveat, Bebas_
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import PetCompanion from "@/components/PetCompanion";
+import PetHint from "@/components/PetHint";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -67,6 +69,8 @@ export default function RootLayout({
       <body className="bg-black text-white font-sans antialiased overflow-x-clip">
         <SmoothScroll>
           <CustomCursor />
+          <PetCompanion />
+          <PetHint />
           <div className="mx-auto max-w-[2000px] px-[3%] md:px-4 lg:px-9 pt-24">
             {children}
           </div>

@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import PetPicker from "@/components/PetPicker";
 
 const LINKS = [
   { label: "Home", href: "#home" },
@@ -56,8 +57,9 @@ const Nav: React.FC = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-sm transition-transform duration-300 ${visible ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="mx-auto max-w-[2000px] px-[3%] md:px-4 lg:px-9 pt-8 pb-6">
         <nav className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="flex items-start">
+          <div className="flex items-start gap-3">
             <a href="#home" className="text-2xl font-bold text-white tracking-normal">Danish<sup className="text-[0.8em] font-bold align-super">®</sup></a>
+            <PetPicker />
           </div>
 
           <div className="flex flex-col md:items-center">
