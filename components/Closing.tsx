@@ -1,7 +1,7 @@
 // components/Closing.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const PHOTOS = [
@@ -50,6 +50,13 @@ const FlipLink: React.FC<FlipLinkProps> = ({ children, href, onClick }) => {
 
 const Closing: React.FC = () => {
   const [toastVisible, setToastVisible] = useState(false);
+  const toastTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    };
+  }, []);
 
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -65,7 +72,8 @@ const Closing: React.FC = () => {
       .writeText(EMAIL)
       .then(() => {
         setToastVisible(true);
-        setTimeout(() => setToastVisible(false), 2000);
+        if (toastTimeout.current) clearTimeout(toastTimeout.current);
+        toastTimeout.current = setTimeout(() => setToastVisible(false), 2000);
       })
       .catch(fallback);
   };
@@ -79,16 +87,16 @@ const Closing: React.FC = () => {
 
       {/* Section header */}
       <div className="border-t border-white/10 py-4">
-        <div className="grid grid-cols-3 items-center text-sm text-gray-400 uppercase tracking-wider">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-3 items-center text-sm text-gray-400 uppercase tracking-wider">
           <span>© Final Section クロージング</span>
-          <span className="text-center">(DSH® — 05)</span>
-          <span className="text-right">Closing Notes</span>
+          <span className="md:text-center">(DSH® — 05)</span>
+          <span className="md:text-right">Closing Notes</span>
         </div>
       </div>
       <div className="border-t border-white/10" />
 
       {/* Photo marquee — full bleed */}
-      <div className="mt-16 overflow-hidden -mx-[3%] md:-mx-4 lg:-mx-9">
+      <div className="mt-16 overflow-hidden -mx-4 md:-mx-6 lg:-mx-9">
         <div className="marquee-track flex items-center gap-4">
           {[...PHOTOS, ...PHOTOS].map((p, i) => (
             <div key={i} className="relative shrink-0 bg-zinc-800 rounded-2xl overflow-hidden" style={{ width: p.w + "px", height: p.h + "px" }}>
@@ -99,9 +107,9 @@ const Closing: React.FC = () => {
       </div>
 
       {/* White banner with 4 labels */}
-      <div className="mt-16 bg-white text-black grid grid-cols-4 px-8 py-4 rounded-sm">
+      <div className="mt-16 bg-white text-black grid grid-cols-2 gap-y-2 md:grid-cols-4 px-6 md:px-8 py-4 rounded-sm">
         {BANNER_LABELS.map((label, i) => (
-          <span key={label} className={`text-sm font-medium ${i === 0 ? "text-left" : i === BANNER_LABELS.length - 1 ? "text-right" : "text-center"}`}>
+          <span key={label} className={`text-sm font-medium ${i % 2 === 0 ? "text-left" : "text-right"} ${i === 0 ? "md:text-left" : i === BANNER_LABELS.length - 1 ? "md:text-right" : "md:text-center"}`}>
             {label}
           </span>
         ))}

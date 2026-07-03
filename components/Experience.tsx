@@ -45,10 +45,10 @@ const Experience: React.FC = () => {
     <section className="mt-24 pb-[100px]">
       {/* Section header */}
       <div className="border-t border-white/10 py-4">
-        <div className="grid grid-cols-3 items-center text-sm text-gray-400 uppercase tracking-wider">
+        <div className="grid grid-cols-1 gap-1 md:grid-cols-3 items-center text-sm text-gray-400 uppercase tracking-wider">
           <span>© Experience エクスペリエンス</span>
-          <span className="text-center">(DSH® — 03)</span>
-          <span className="text-right">Engineering & Research</span>
+          <span className="md:text-center">(DSH® — 03)</span>
+          <span className="md:text-right">Engineering & Research</span>
         </div>
       </div>
       <div className="border-t border-white/10" />
@@ -59,7 +59,7 @@ const Experience: React.FC = () => {
           <div className="col-span-12 md:col-span-9">
             <h2
               className="font-bold tracking-tighter leading-[0.9]"
-              style={{ fontSize: "clamp(5rem, 17vw, 20rem)" }}
+              style={{ fontSize: "clamp(3rem, 17vw, 20rem)" }}
             >
               <span
                 className={`inline-block transition-opacity duration-300 ${visible ? "opacity-100" : "opacity-0"}`}
@@ -77,7 +77,7 @@ const Experience: React.FC = () => {
 
       {/* Experience block */}
       <div className="mt-20">
-        <div className="bg-white text-black grid grid-cols-4 px-8 py-4 rounded-sm">
+        <div className="hidden md:grid bg-white text-black grid-cols-4 px-8 py-4 rounded-sm">
           {EXPERIENCE_HEADERS.map((h, i) => (
             <span
               key={h}
@@ -91,12 +91,12 @@ const Experience: React.FC = () => {
           {EXPERIENCE_ROWS.map((row, rIdx) => (
             <div
               key={rIdx}
-              className="grid grid-cols-4 px-8 py-6 border-b border-white/10 text-gray-300"
+              className="grid grid-cols-1 gap-1 md:grid-cols-4 md:gap-0 px-4 md:px-8 py-6 border-b border-white/10 text-gray-300"
             >
               {row.map((cell, cIdx) => (
                 <span
                   key={cIdx}
-                  className={`text-base ${cIdx === 0 ? "text-left text-white" : cIdx === row.length - 1 ? "text-right" : "text-center"}`}
+                  className={`text-base ${cIdx === 0 ? "text-white" : cIdx === row.length - 1 ? "md:text-right" : "md:text-center"}`}
                 >
                   {cell}
                 </span>
@@ -108,7 +108,7 @@ const Experience: React.FC = () => {
 
       {/* Education block */}
       <div className="mt-16">
-        <div className="bg-white text-black grid grid-cols-4 px-8 py-4 rounded-sm">
+        <div className="hidden md:grid bg-white text-black grid-cols-4 px-8 py-4 rounded-sm">
           {EDUCATION_HEADERS.map((h, i) => (
             <span
               key={h}
@@ -122,12 +122,12 @@ const Experience: React.FC = () => {
           {EDUCATION_ROWS.map((row, rIdx) => (
             <div
               key={rIdx}
-              className="grid grid-cols-4 px-8 py-6 border-b border-white/10 text-gray-300"
+              className="grid grid-cols-1 gap-1 md:grid-cols-4 md:gap-0 px-4 md:px-8 py-6 border-b border-white/10 text-gray-300"
             >
               {row.map((cell, cIdx) => (
                 <span
                   key={cIdx}
-                  className={`text-base ${cIdx === 0 ? "text-left text-white" : cIdx === row.length - 1 ? "text-right" : "text-center"}`}
+                  className={`text-base ${cIdx === 0 ? "text-white" : cIdx === row.length - 1 ? "md:text-right" : "md:text-center"}`}
                 >
                   {cell}
                 </span>

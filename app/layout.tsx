@@ -71,7 +71,7 @@ export default function RootLayout({
           <CustomCursor />
           <PetCompanion />
           <PetHint />
-          <div className="mx-auto max-w-[2000px] px-[3%] md:px-4 lg:px-9 pt-24">
+          <div className="mx-auto max-w-[2000px] px-4 md:px-6 lg:px-9 pt-24">
             {children}
           </div>
         </SmoothScroll>

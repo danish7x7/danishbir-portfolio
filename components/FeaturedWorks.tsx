@@ -24,7 +24,7 @@ const projects = [
     id: "03",
     title: "LLM Inference Benchmarking Suite",
     tag: "Performance Engineering",
-    github: "https://github.com/danish7x7/llm-inference-bench", // TODO: replace with real repo URL
+    github: "https://github.com/danish7x7/llm-inference-bench",
     image: "/projects/01.png",
     placement: "left",
     size: "lg",
@@ -33,7 +33,7 @@ const projects = [
     id: "04",
     title: "Cloud Infrastructure Automation",
     tag: "Infrastructure as Code",
-    github: "https://github.com/danish7x7/devops-nginx-project", // TODO: replace with real repo URL
+    github: "https://github.com/danish7x7/devops-nginx-project",
     image: "/projects/02.png",
     placement: "right",
     size: "md",
@@ -42,7 +42,7 @@ const projects = [
     id: "05",
     title: "Agentic RAG System",
     tag: "Applied ML",
-    github: "https://github.com/danish7x7/LegalLLM", // TODO: replace with real repo URL
+    github: "https://github.com/danish7x7/LegalLLM",
     image: "/projects/03.png",
     placement: "left",
     size: "lg",
@@ -59,9 +59,9 @@ const projects = [
 ];
 
 const sizeClasses: Record<string, string> = {
-  sm: "w-[45%]",
-  md: "w-[55%]",
-  lg: "w-[65%]",
+  sm: "w-full md:w-[45%]",
+  md: "w-full md:w-[55%]",
+  lg: "w-full md:w-[65%]",
 };
 
 const FeaturedWorks: React.FC = () => {
@@ -86,16 +86,9 @@ const FeaturedWorks: React.FC = () => {
       {/* Marquee */}
       <div className="relative w-full overflow-hidden py-10 pointer-events-none">
         <div className="flex whitespace-nowrap marquee-track font-bold text-white leading-none tracking-tighter" style={{ fontSize: "clamp(8rem, 22vw, 28rem)" }}>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
-          <span className="pr-16">Featured Works</span>
+          {Array.from({ length: 10 }).map((_, i) => (
+            <span key={i} className="pr-16" aria-hidden={i > 0}>Featured Works</span>
+          ))}
         </div>
       </div>
 
@@ -131,6 +124,11 @@ const FeaturedWorks: React.FC = () => {
               <div className="flex items-baseline justify-between mt-4">
                 <span className="text-lg font-bold text-white">{project.title}</span>
                 <span className="text-sm font-bold text-gray-400">({project.id})</span>
+              </div>
+              {/* Touch devices never see the hover overlay — surface the tag inline */}
+              <div className="mt-1 flex items-baseline justify-between md:hidden">
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">{project.tag}</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-gray-400">View on GitHub →</span>
               </div>
             </div>
           </div>
