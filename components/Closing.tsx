@@ -127,7 +127,7 @@ const Closing: React.FC = () => {
 
       {/* Flip-link footer — horizontal quick-links */}
       <div id="contact" className="mt-24 flex flex-row flex-wrap items-center justify-center gap-8 md:gap-16 scroll-mt-[150px]">
-        <FlipLink href="https://drive.google.com/file/d/14MsgsXX1zMgdz1p4XUs9f-tfI6qT5D2a/view?usp=drive_link">Resume</FlipLink>
+        <FlipLink href="https://drive.google.com/drive/folders/1FKvrisvTeqzW3grFgJ8PEOoV6tpHkFVG?usp=drive_link">Resume</FlipLink>
         <FlipLink href="https://www.linkedin.com/in/danishbir-singh-bhatti/">LinkedIn</FlipLink>
         <FlipLink href="https://github.com/danish7x7">GitHub</FlipLink>
         <FlipLink onClick={handleEmailClick}>Email</FlipLink>
