@@ -10,6 +10,7 @@ const EXPERIENCE_HEADERS = ["Company", "Years", "Role", "Location"];
 const EXPERIENCE_ROWS = [
   ["San Jose State University", "Jul 2025 — Dec 2025", "Graduate Research Assistant", "San Jose, CA"],
   ["SJSU Student Union", "Jul 2024 — Dec 2025", "Events & Programs Assistant", "San Jose, CA"],
+  ["Celeriz (Now Rave)", "Sept 2022 — Dec 2023", "Software Engineer", "San Francisco (Remote)"],
 ];
 
 const EDUCATION_HEADERS = ["Institution", "Years", "Degree", "Location"];

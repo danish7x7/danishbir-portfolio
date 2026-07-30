@@ -4,6 +4,24 @@ import Image from "next/image";
 const projects = [
   {
     id: "01",
+    title: "FreightPilot",
+    tag: "AGENTIC AI / MICROSERVICES",
+    github: "https://github.com/danish7x7/freightpilot",
+    image: "/projects/07.jpg",
+    placement: "left",
+    size: "lg",
+  },
+  {
+    id: "02",
+    title: "Terminal Agent Lab",
+    tag: "LLM EVALUATION",
+    github: "https://github.com/danish7x7/terminal-agent-lab",
+    image: "/projects/08.jpg",
+    placement: "right",
+    size: "lg",
+  },
+  {
+    id: "03",
     title: "Injection-Aware Freight Pipeline",
     tag: "LLM Safety",
     github: "https://github.com/danish7x7/freight-pipeline",
@@ -12,7 +30,7 @@ const projects = [
     size: "lg",
   },
   {
-    id: "02",
+    id: "04",
     title: "Geospatial Inequality Dashboard",
     tag: "Full-Stack Geospatial",
     github: "https://github.com/danish7x7/geospatial-dashboard",
@@ -21,7 +39,7 @@ const projects = [
     size: "md",
   },
   {
-    id: "03",
+    id: "05",
     title: "LLM Inference Benchmarking Suite",
     tag: "Performance Engineering",
     github: "https://github.com/danish7x7/llm-inference-bench",
@@ -30,7 +48,7 @@ const projects = [
     size: "lg",
   },
   {
-    id: "04",
+    id: "06",
     title: "Cloud Infrastructure Automation",
     tag: "Infrastructure as Code",
     github: "https://github.com/danish7x7/devops-nginx-project",
@@ -39,7 +57,7 @@ const projects = [
     size: "md",
   },
   {
-    id: "05",
+    id: "07",
     title: "Agentic RAG System",
     tag: "Applied ML",
     github: "https://github.com/danish7x7/LegalLLM",
@@ -48,7 +66,7 @@ const projects = [
     size: "lg",
   },
   {
-    id: "06",
+    id: "08",
     title: "Travel Companion — Multimodal AI",
     tag: "Applied ML",
     github: "https://github.com/danish7x7/Multi-Modal-AI-Travel-Companion",
